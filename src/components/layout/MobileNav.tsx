@@ -1,4 +1,4 @@
-import { User, Code2, Briefcase, Mail } from "lucide-react";
+import { User, Code2, Briefcase, Mail, Award } from "lucide-react";
 import { useEffect, useState } from "react";
 
 export const MobileNav = () => {
@@ -7,7 +7,7 @@ export const MobileNav = () => {
   const navLinks = [
     { id: "about", icon: <User size={20} />, href: "#about" },
     { id: "skills", icon: <Code2 size={20} />, href: "#skills" },
-    { id: "experience", icon: <Briefcase size={20} />, href: "#experience" },
+    { id: "experience", icon: <Award size={20} />, href: "#experience" },
     { id: "projects", icon: <Briefcase size={20} />, href: "#projects" },
     { id: "contact", icon: <Mail size={20} />, href: "#contact" },
   ];
