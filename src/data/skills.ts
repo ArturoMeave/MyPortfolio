@@ -10,7 +10,7 @@ export type SkillCategory = {
   items: SkillItem[];
 };
 
-export const getSkillsData = (t: (key: string) => string): SkillCategory[] => [
+export const getSkillsData = (): SkillCategory[] => [
   {
     titleKey: 'skills.categories.languages',
     iconName: 'Code2',

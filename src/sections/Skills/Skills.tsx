@@ -45,7 +45,7 @@ const SkillIcon = ({ item }: { item: SkillItem }) => {
 
 export const Skills = () => {
   const { t } = useTranslation();
-  const categories = getSkillsData(t);
+  const categories = getSkillsData();
 
   return (
     <section id="skills" className="space-y-12">
