@@ -1,6 +1,7 @@
 import { useState } from "react";
-import { Github, Linkedin, Mail, Smartphone, X } from "lucide-react";
+import { X } from "lucide-react";
 import { useTranslation } from "react-i18next";
+import { socials } from "../../data/socials";
 import fotoPerfil from "../../assets/foto-perfil.jpg"; 
 
 export const Sidebar = () => {
@@ -15,6 +16,10 @@ export const Sidebar = () => {
     { name: t("nav.projects"), href: "#projects" },
     { name: t("nav.contact"), href: "#contact" },
   ];
+
+  // Filtering socials for the two specific sections in Sidebar
+  const contactInfo = socials.filter(s => ["email", "phone"].includes(s.id));
+  const socialLinks = socials.filter(s => ["github", "linkedin"].includes(s.id));
 
   return (
     <>
@@ -67,18 +72,35 @@ export const Sidebar = () => {
 
         <div className="mt-auto pt-10 border-t border-white/5 space-y-6">
           <div className="flex flex-col gap-3 text-sm">
-            <a href="mailto:arturomeave.dev@gmail.com" className="flex items-center gap-3 text-gray-400 hover:text-white transition-colors group">
-              <Mail size={16} className="text-gray-600 group-hover:text-orange-500 transition-colors" />
-              <span>arturomeave.dev@gmail.com</span>
-            </a>
-            <div className="flex items-center gap-3 text-gray-400 hover:text-white transition-colors group">
-              <Smartphone size={16} className="text-gray-600 group-hover:text-orange-500 transition-colors" />
-              <span>+34 664 539 243</span>
-            </div>
+            {contactInfo.map((social) => {
+              const Icon = social.icon;
+              return (
+                <a 
+                  key={social.id} 
+                  href={social.href || "#"} 
+                  className="flex items-center gap-3 text-gray-400 hover:text-white transition-colors group"
+                >
+                  <Icon size={16} className={`text-gray-600 group-hover:${social.color} transition-colors`} />
+                  <span>{social.label}</span>
+                </a>
+              );
+            })}
           </div>
           <div className="flex items-center gap-5">
-            <a href="https://github.com/arturo54535345" target="_blank" rel="noreferrer" className="text-gray-400 hover:text-orange-500 transition-colors"><Github size={20} /></a>
-            <a href="https://www.linkedin.com/in/arturo-meave/" target="_blank" rel="noreferrer" className="text-gray-400 hover:text-orange-500 transition-colors"><Linkedin size={20} /></a>
+            {socialLinks.map((social) => {
+              const Icon = social.icon;
+              return (
+                <a 
+                  key={social.id} 
+                  href={social.href || "#"} 
+                  target="_blank" 
+                  rel="noreferrer" 
+                  className="text-gray-400 hover:text-orange-500 transition-colors"
+                >
+                  <Icon size={20} />
+                </a>
+              );
+            })}
           </div>
         </div>
       </div>
@@ -109,4 +131,4 @@ export const Sidebar = () => {
       )}
     </>
   );
-};
+};

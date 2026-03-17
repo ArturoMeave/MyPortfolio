@@ -1,6 +1,6 @@
 import { MainLayout } from "./components/layout/MainLayout";
 import { Intro } from "./sections/Intro/Intro";
-import { Experience } from "./sections/Experiencie/Experiencie";
+import { Experience } from "./sections/Experience/Experience";
 import { Projects } from "./sections/Projects/Projects";
 import { Skills } from "./sections/Skills/Skills";
 import { Contact } from "./sections/Contact/Contact"; 

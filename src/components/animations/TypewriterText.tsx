@@ -30,7 +30,7 @@ export const TypewriterText = ({ text, className = "", delay = 0, speed = 0.05 }
 
   return (
     <motion.span
-      className={`inline-block ${className}`}
+      className={`inline ${className}`}
       variants={container}
       initial="hidden"
       whileInView="visible"
@@ -42,7 +42,7 @@ export const TypewriterText = ({ text, className = "", delay = 0, speed = 0.05 }
         letterIndex += letters.length + 1;
 
         return (
-          <span key={wordIdx} className="inline-block whitespace-nowrap">
+          <span key={wordIdx} className="inline-block">
             {letters.map((letter, i) => (
               <motion.span
                 key={`${wordIdx}-${i}`}

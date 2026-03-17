@@ -6,11 +6,11 @@ export const projects: Project[] = [
     title: "AI Business Manager",
     description:
       "Panel de administración completo con gráficos en tiempo real y gestión de inventario.",
-    images: ["/assets/images/projects/dashboard.png"], // imagen representativa del proyecto
+    images: ["/assets/images/projects/dashboard.png"],
     technologies: ["React", "TypeScript", "Tailwind", "Recharts"],
-    link: "https://tu-proyecto.com",
-    github: "https://github.com/tu-usuario/repo",
-    size: "large", // Ocupará 2 columnas
+    link: "",
+    github: "",
+    size: "large",
   },
   {
     id: 2,
@@ -18,8 +18,8 @@ export const projects: Project[] = [
     description: "Aplicación de productividad tipo Trello con drag & drop.",
     images: ["/assets/images/projects/tasks.png"],
     technologies: ["React", "Zustand", "Framer Motion"],
-    link: "https://tu-proyecto.com",
-    size: "medium", // Ocupará 1 columna normal
+    link: "",
+    size: "medium",
   },
   {
     id: 3,
@@ -27,8 +27,8 @@ export const projects: Project[] = [
     description: "Consumo de API del tiempo con geolocalización.",
     images: ["/assets/images/projects/weather.png"],
     technologies: ["TypeScript", "OpenWeatherMap"],
-    link: "https://tu-proyecto.com",
-    size: "small", //Ocupa columna pequeña
+    link: "",
+    size: "small",
   },
   {
     id: 4,

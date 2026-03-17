@@ -1,11 +1,12 @@
 import { useState } from "react";
-import { Mail, Send, MapPin, Loader2, CheckCircle2 } from "lucide-react";
+import { Send, Loader2, CheckCircle2 } from "lucide-react";
 import { SectionWrapper } from "../../components/layout/SectionWrapper";
 import { FadeIn } from "../../components/animations/FadeIn";
 import { TypewriterText } from "../../components/animations/TypewriterText";
 import { Button } from "../../components/ui/Button";
 import { Card } from "../../components/ui/Card";
 import { useTranslation } from "react-i18next";
+import { socials } from "../../data/socials";
 
 export const Contact = () => {
   const { t } = useTranslation();
@@ -35,6 +36,9 @@ export const Contact = () => {
     }
   };
 
+  // Iteramos sobre los primeros 3 (Email, Phone, Location) para la info de contacto
+  const contactMethods = socials.filter(s => ["email", "phone", "location"].includes(s.id));
+
   return (
     <SectionWrapper id="contact" className="mb-16">
       <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-24 items-start">
@@ -60,26 +64,28 @@ export const Contact = () => {
 
           <FadeIn delay={0.1}>
             <div className="flex flex-col gap-6 mt-8">
-              <div className="flex items-center gap-4">
-                <div className="p-3 rounded-full bg-white/5 border border-white/10 text-orange-400">
-                  <Mail size={24} />
-                </div>
-                <div>
-                  <p className="text-xs font-bold uppercase tracking-wider text-gray-500">{t('contact.form.email')}</p>
-                  <a href="mailto:arturomeave.dev@gmail.com" className="text-white text-lg font-medium hover:text-orange-400 transition-colors">
-                    arturomeave.dev@gmail.com
-                  </a>
-                </div>
-              </div>
-              <div className="flex items-center gap-4">
-                <div className="p-3 rounded-full bg-white/5 border border-white/10 text-orange-400">
-                  <MapPin size={24} />
-                </div>
-                <div>
-                  <p className="text-xs font-bold uppercase tracking-wider text-gray-500">Ubicación</p>
-                  <p className="text-lg font-medium text-white">Madrid, España (Remoto)</p>
-                </div>
-              </div>
+              {contactMethods.map((method) => {
+                const Icon = method.icon;
+                return (
+                  <div key={method.id} className="flex items-center gap-4">
+                    <div className="p-3 rounded-full bg-white/5 border border-white/10 text-orange-400">
+                      <Icon size={24} />
+                    </div>
+                    <div>
+                      <p className="text-xs font-bold uppercase tracking-wider text-gray-500">
+                        {method.titleKey ? t(method.titleKey) : (method.id === 'location' ? 'Ubicación' : method.id)}
+                      </p>
+                      {method.href ? (
+                        <a href={method.href} className="text-white text-lg font-medium hover:text-orange-400 transition-colors">
+                          {method.label}
+                        </a>
+                      ) : (
+                        <p className="text-lg font-medium text-white">{method.label}</p>
+                      )}
+                    </div>
+                  </div>
+                );
+              })}
             </div>
           </FadeIn>
         </div>

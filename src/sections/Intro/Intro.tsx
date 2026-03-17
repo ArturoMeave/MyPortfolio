@@ -59,7 +59,9 @@ export const Intro = () => {
           </a>
 
           <a 
-            href="#" 
+            href="/assets/cv-arturo-meave.pdf" 
+            target="_blank"
+            download
             className="group flex items-center gap-3 rounded-full border border-orange-500/20 bg-orange-500/5 px-7 py-3.5 text-sm font-bold text-orange-400 transition-all hover:bg-orange-500/10 hover:border-orange-500/30 hover:text-orange-300 active:scale-95"
           >
             <FileText size={18} className="transition-colors" />
