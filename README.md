@@ -75,3 +75,5 @@ export default defineConfig([
 ```
 
 Prueba de conexión MCP exitosa desde Antigravity
+
+Conexión en la nube configurada con éxito
