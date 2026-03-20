@@ -73,3 +73,5 @@ export default defineConfig([
   },
 ])
 ```
+
+Prueba de conexión MCP exitosa desde Antigravity
