@@ -68,19 +68,19 @@ export const ProjectCard = ({ title, description, image, technologies, link, git
           >
             <div className="px-6 pb-8 md:px-8 md:pb-10 flex flex-col gap-6">
               
-              {/* AQUÍ ESTÁ EL CAMBIO MAGICO: aspect-video y object-contain */}
+              {/* AQUÍ ESTÁ LA CORRECCIÓN: Volvemos al alto fijo original y object-cover */}
               <motion.div 
                 initial={{ scale: 0.98, opacity: 0 }}
                 animate={{ scale: 1, opacity: 1 }}
                 transition={{ delay: 0.1, duration: 0.4 }}
-                className="relative aspect-video w-full flex items-center justify-center overflow-hidden rounded-xl border border-white/10 shadow-2xl bg-black/40"
+                className="relative h-48 sm:h-64 md:h-72 w-full overflow-hidden rounded-xl border border-white/10 shadow-2xl bg-black/20"
               >
                 <motion.img 
                   src={image} 
                   alt={title} 
                   whileHover={{ scale: 1.05 }}
                   transition={{ duration: 0.8 }}
-                  className="h-full w-full object-contain opacity-90 hover:opacity-100 transition-opacity"
+                  className="h-full w-full object-cover opacity-90 hover:opacity-100 transition-opacity"
                 />
               </motion.div>
 
