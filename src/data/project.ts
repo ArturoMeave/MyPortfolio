@@ -4,12 +4,12 @@ export const projects: Project[] = [
   {
     id: 1,
     title: "AI Business Manager",
-    description:
-      "Panel de administración completo con gráficos en tiempo real y gestión de inventario.",
-    images: ["/assets/images/projects/dashboard.png"],
+    description: "Panel de administración inteligente para automatizar finanzas y gestión de clientes.",
+    images: ["/business.jpeg"],
     technologies: ["React", "TypeScript", "Tailwind", "Recharts"],
-    link: "",
-    github: "",
+    link: "https://ai-business-manager-web.vercel.app",
+    github: "https://github.com/ArturoMeave/ai-business-manager-Web",
+    githubBackend: "https://github.com/ArturoMeave/ai-business-manager-backend",
     size: "large",
   },
   {

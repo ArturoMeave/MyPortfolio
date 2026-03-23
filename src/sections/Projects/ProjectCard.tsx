@@ -9,9 +9,10 @@ interface ProjectCardProps {
   technologies: string[];
   link?: string;
   github?: string;
+  githubBackend?: string; 
 }
 
-export const ProjectCard = ({ title, description, image, technologies, link, github }: ProjectCardProps) => {
+export const ProjectCard = ({ title, description, image, technologies, link, github, githubBackend }: ProjectCardProps) => {
   const [isHovered, setIsHovered] = useState(false);
 
   return (
@@ -112,16 +113,21 @@ export const ProjectCard = ({ title, description, image, technologies, link, git
                   initial={{ y: 10, opacity: 0 }}
                   animate={{ y: 0, opacity: 1 }}
                   transition={{ delay: 0.3 }}
-                  className="flex gap-3 pt-2"
+                  className="flex flex-wrap gap-3 pt-2"
                 >
                   {link && link.trim() !== "" && (
                     <a href={link} target="_blank" rel="noreferrer" className="flex items-center gap-2 rounded-full bg-white px-5 py-2.5 text-xs font-bold text-black hover:bg-orange-500 hover:text-white transition-all">
-                      <ExternalLink size={14} /> Demo
+                      <ExternalLink size={14} /> Web Directo
                     </a>
                   )}
                   {github && github.trim() !== "" && (
                     <a href={github} target="_blank" rel="noreferrer" className="flex items-center gap-2 rounded-full border border-white/20 bg-white/5 px-5 py-2.5 text-xs font-bold text-white hover:bg-white/10 transition-colors">
-                      <Github size={14} /> Código
+                      <Github size={14} /> Frontend Repo
+                    </a>
+                  )}
+                  {githubBackend && githubBackend.trim() !== "" && (
+                    <a href={githubBackend} target="_blank" rel="noreferrer" className="flex items-center gap-2 rounded-full border border-white/20 bg-white/5 px-5 py-2.5 text-xs font-bold text-white hover:bg-white/10 transition-colors">
+                      <Github size={14} /> Backend Repo
                     </a>
                   )}
                 </motion.div>

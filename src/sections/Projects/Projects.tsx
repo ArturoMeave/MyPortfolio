@@ -14,6 +14,7 @@ export const Projects = () => {
             technologies={project.technologies}
             link={project.link}
             github={project.github}
+            githubBackend={project.githubBackend}
           />
         </FadeIn>
       ))}

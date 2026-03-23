@@ -1,4 +1,4 @@
-export interface Project {
+export type Project = {
   id: number;
   title: string;
   description: string;
@@ -6,5 +6,6 @@ export interface Project {
   technologies: string[];
   link?: string;
   github?: string;
+  githubBackend?: string; // <-- ¡ESTA ES LA LÍNEA CLAVE!
   size?: "small" | "medium" | "large";
-}
+};
