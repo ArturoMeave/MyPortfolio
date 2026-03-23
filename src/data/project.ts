@@ -12,6 +12,7 @@ export const projects: Project[] = [
     githubBackend: "https://github.com/ArturoMeave/ai-business-manager-backend",
     size: "large",
   },
+  /*
   {
     id: 2,
     title: "SOLe",
@@ -37,5 +38,5 @@ export const projects: Project[] = [
     images: ["/assets/images/projects/portfolio.png"],
     technologies: ["HTML", "CSS", "JS"],
     size: "small",
-  },
+  },*/
 ];
